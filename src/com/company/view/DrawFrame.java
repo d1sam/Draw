@@ -94,7 +94,7 @@ public class DrawFrame extends JFrame {
         buttonPanel.add(rect);
 
         // 2. Кнопка для скругленного прямоугольника
-        BigTextButton rounded_rect = new BigTextButton("Rounded rect.");
+        BigTextButton rounded_rect = new BigTextButton("Rounded rect");
         rounded_rect.addActionListener(e -> {
             // Говорим области рисования, что теперь нужно
             // рисовать скругленные прямоугольники
@@ -102,6 +102,31 @@ public class DrawFrame extends JFrame {
         });
         // Добавляем вторую кнопку на верхнюю панель
         buttonPanel.add(rounded_rect);
+
+        // 3. Кнопка для эллипса
+
+        BigTextButton ellipse = new BigTextButton("Ellipse");
+        ellipse.addActionListener(e -> {
+            // Говорим области рисования, что теперь нужно
+            // рисовать скругленные прямоугольники
+            surface.setShapeType(DrawShape.ELLIPSE);
+        });
+        // Добавляем вторую кнопку на верхнюю панель
+        buttonPanel.add(ellipse);
+
+
+        // 4. кнопка отмены
+        BigTextButton back = new BigTextButton("Back");
+        back.addActionListener(e ->{
+            surface.deleteLast();
+        });
+        buttonPanel.add(back);
+
+        BigTextButton clearAll = new BigTextButton("Clear");
+        clearAll.addActionListener(e -> {
+            surface.clearAll();
+        });
+        buttonPanel.add(clearAll);
 
         // TODO: добавить кнопку для эллипса по аналогии с остальными кнопками
 

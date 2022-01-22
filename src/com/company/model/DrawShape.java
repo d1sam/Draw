@@ -2,6 +2,7 @@ package com.company.model;
 
 
 import java.awt.*;
+import java.util.Deque;
 
 /**
  * Класс "Фигура для рисования".
@@ -15,6 +16,8 @@ public abstract class DrawShape {
             shape = new Rectangle();
         } else if (shapeType == DrawShape.SHAPE_ROUNDED_RECT) {
             shape = new RoundedRectangle();
+        } else if (shapeType == DrawShape.ELLIPSE){
+            shape = new Ellipse();
         }
         return shape;
     }
@@ -22,6 +25,7 @@ public abstract class DrawShape {
     // Константы для типов фигур
     public static final int SHAPE_RECTANGLE = 0;
     public static final int SHAPE_ROUNDED_RECT = 1;
+    public static final int ELLIPSE = 3;
 
     // Начальная и конечная точки
     private Point startPoint;

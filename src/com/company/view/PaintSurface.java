@@ -164,6 +164,18 @@ public class PaintSurface extends JComponent {
         }
     }
 
+    public void deleteLast() {
+        if (shapes.size() > 0) {
+            shapes.remove(shapes.size() - 1);
+            repaint();
+        }
+    }
+
+    public void clearAll() {
+        shapes.clear();
+        repaint();
+    }
+
     /**
      * Данный метод отрисовает фон поверхности (сетка)
      *
